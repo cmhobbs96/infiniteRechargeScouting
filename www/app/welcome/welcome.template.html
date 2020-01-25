@@ -1,0 +1,44 @@
+<ion-view view-title="Start Scouting">
+  <ion-content class="padding">
+	<div class="row">
+		<div class="col text-center">
+			<h1>Welcome</h1>
+		</div>
+	</div>
+	<form name="scoutingForm" ng-submit="welcomeCtrl.submit()">
+		<div class="list list-inset">
+			<label class="item item-input">
+				<input ng-model="welcomeCtrl.matchProperties.matchNumber"
+					type="tel"
+					maxlength="6"
+					placeholder="Match Number">
+			</label>
+	        <label class="item item-input">
+				<input ng-model="welcomeCtrl.matchProperties.scoutName"
+					type="text"
+					maxlength="12"
+					placeholder="Scout Person">
+			</label>
+			<label class="item item-input item-select">
+				<div class="input-label">Select Team</div>
+					<select ng-model="welcomeCtrl.matchProperties.teamNumber" 
+						ng-options="team.team_number as (team.team_number + ' - ' + team.nickname) for team in welcomeCtrl.teams">
+					</select>
+			</label>
+			<label class="item item-button">
+				<div class="text-center">
+					<button class="button button-positive"
+							type="submit"
+							ng-disabled="welcomeCtrl.isFormValid()">
+						Start Scouting!
+					</button>
+				</div>
+			</label>
+		</div>
+	</form>
+    <div class="padding text-center">
+        <h3>Field Layout</h3>
+        <img class="title-image" src="powerup.jpg" width="100%" height="auto"/>
+    </div>    
+  </ion-content>
+</ion-view>

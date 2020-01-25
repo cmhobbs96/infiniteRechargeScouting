@@ -1,0 +1,52 @@
+<ion-view view-title="Team Number: {{resultsCtrl.match.teamNumber}}">
+	<ion-content class="padding">
+  <div class="row">
+      <div class="col text-center">
+        <h1>Results</h1>
+      </div>
+    </div>
+    <div class="list">
+
+  <div class="item item-icon-left">
+    <i class="icon ion-clipboard"></i>
+      
+    Total Score
+    <span class="badge badge-royal" ng-bind="resultsCtrl.total()"></span>
+  </div>
+
+  <div class="item item-icon-left">
+
+    <i class="icon ion-cube"></i> 
+    Total Cubes
+    <span class="badge badge-positive" ng-bind="resultsCtrl.cubes()"></span>
+  </div>
+
+  <div class="item item-icon-left">
+    <i class="icon ion-ios-gear-outline"></i>
+    Climb
+    <span class="badge badge-energized" ng-bind="resultsCtrl.climb()"></span>
+  </div>
+        
+    <div class="item item-icon-left">
+    <i class="icon ion-android-warning"></i>
+    Fouls
+    <span class="badge badge-balanced" ng-bind="resultsCtrl.fouls()"></span>
+    </div>
+
+ <!-- <div class="item item-icon-left">
+    <i class="icon ion-flag"></i>
+    Rotors
+    <span class="badge badge-balanced" ng-bind="resultsCtrl.rotor()"></span>
+  </div> -->
+        
+   <div class="text-center padding">
+     <button class="button button-positive" ng-click="resultsCtrl.submit()" ng-disabled="resultsCtrl.isSubmitting">
+       <span ng-bind="resultsCtrl.buttonText"></span>
+     </button> 
+     <button class="button button-positive" ng-click="resultsCtrl.cancel()" ng-disabled="!resultsCtrl.isSubmitting">
+       <span>Cancel</span>
+     </button>
+    </div>
+    </div>
+	</ion-content>
+</ion-view>

@@ -1,0 +1,44 @@
+match = {
+	matchNumber: '',
+	teamNumber: '',
+	scout: '',
+	results: {
+		autoResults: {
+			highFuel: 0,
+			lowFuel: 0,
+			kpa: 0,
+			fuelPoints: 0,
+			rotorPoints: 0,
+			basePoints: 0,
+			gearTotal: 0,
+			rotorTotal: 0,
+			baseLine: false,
+			totalAutoPoints: 0
+		},
+		teleOpResults: {
+			highFuel: 0,
+			lowFuel: 0,
+			kpa: 0,
+			fuelPoints: 0,
+			rotorPoints: 0,
+			gearTotal: 0,
+			rotorTotal: 0,
+			climb: false,
+			totalTelopPoints: 0
+		},
+		endGameResults: {
+			red: false,
+			yellow: false,
+			tech: false,
+			foul: false,
+			malfunction: false,
+			totalHighFuel: 0,
+			totalLowFuel: 0,
+			totalKpa: 0,
+			totalGears: 0,
+			totalRotors: 0,
+			totalPoints: 0,
+			outcome: ''
+		}
+	}
+}

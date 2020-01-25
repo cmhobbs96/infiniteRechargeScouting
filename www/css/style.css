@@ -1,0 +1,11 @@
+/* Empty. Add your own CSS if you like */
+.spinner svg {
+  width: 250px;
+  height: 250px;
+  stroke: #33CD5F;
+  fill: #33CD5F;
+}
+
+.blackBackground {
+	background-color: black;
+}

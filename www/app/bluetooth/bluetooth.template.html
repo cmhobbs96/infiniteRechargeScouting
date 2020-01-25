@@ -1,0 +1,34 @@
+<ion-view title="SCOUTWORKS" class="blackBackground">
+  <header class="bar bar-header bar-stable">
+    <h1 class="title">Ionic Bluetooth Attendance</h1>
+  </header>
+
+  <ion-content class="has-header padding">
+    <button class="button button-balanced button-full" ng-click="btCtrl.scan()">
+      Scan
+    </button>
+
+    <center ng-if="btCtrl.showSpinner">
+    <ion-spinner icon="ripple"></ion-spinner>
+    </center>
+
+    <div class="card" ng-if="btCtrl.devices.length">
+      <div class="item item-divider">
+        Devices Found
+      </div>
+      <div class="item">
+        <ul class="list">
+          <li class="item item-button-right" ng-repeat="device in btCtrl.devices">
+            {{device.name}}
+            <button class="button button-balanced" ng-click="btCtrl.connect(device.id)">
+            connect
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+  </ion-content>
+
+</ion-view>

@@ -1,0 +1,140 @@
+<ion-view view-title="Team Number: {{finalCtrl.match.teamNumber}}">
+	<ion-content class="padding">
+  <div class="row">
+      <div class="col text-center">
+        <h1>Final</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-100 text-center">
+        <h4>Outcome</h4>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col col-30">
+        <label class="item item-radio">
+          <input type="radio" name="radio-group" ng-model="finalCtrl.matchParts.outcome.value" ng-value="'win'">
+            <div class="radio-content">
+              <div class="item-content disable-pointer-events" >
+                <span>Win</span>
+              </div>
+              <i class="radio-icon disable-pointer-events icon ion-checkmark"></i>
+            </div>
+        </label>
+      </div>
+      <div class="col col-30">
+        <label class="item item-radio">
+          <input type="radio" name="radio-group" ng-model="finalCtrl.matchParts.outcome.value" ng-value="'lose'">
+            <div class="radio-content">
+              <div class="item-content disable-pointer-events">
+                <span>Lose</span>
+              </div>
+              <i class="radio-icon disable-pointer-events icon ion-checkmark"></i>
+            </div>
+        </label>
+      </div>
+      <div class="col col-30">
+        <label class="item item-radio">
+          <input type="radio" name="radio-group" ng-model="finalCtrl.matchParts.outcome.value" ng-value="'tie'"> 
+            <div class="radio-content">
+              <div class="item-content disable-pointer-events">
+                <span>Tie</span>
+              </div>
+              <i class="radio-icon disable-pointer-events icon ion-checkmark"></i>
+            </div>
+        </label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col col-100 text-center">
+        <h4>Penalties</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-100">
+        <ul class="list">
+          <li class="item item-toggle">
+             Red Card
+             <label class="toggle toggle-assertive">
+               <input type="checkbox" ng-model="finalCtrl.matchParts.red">
+               <div class="track">
+                 <div class="handle"></div>
+               </div>
+             </label>
+          </li>
+          <li class="item item-toggle">
+             Yellow Card
+             <label class="toggle toggle-energized">
+               <input type="checkbox" ng-model="finalCtrl.matchParts.yellow">
+               <div class="track">
+                 <div class="handle"></div>
+               </div>
+             </label>
+          </li>
+          <li class="item item-toggle">
+             Foul
+             <label class="toggle toggle-balanced">
+               <input type="checkbox" ng-model="finalCtrl.matchParts.foul">
+               <div class="track">
+                 <div class="handle"></div>
+               </div>
+             </label>
+          </li>
+          <li class="item item-toggle">
+             Tech Foul
+             <label class="toggle toggle-positive">
+               <input type="checkbox" ng-model="finalCtrl.matchParts.tech">
+               <div class="track">
+                 <div class="handle"></div>
+               </div>
+             </label>
+          </li>
+          <li>
+            <div class="row">
+              <div class="col col-30">
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+   <div class="row">
+      <div class="col col-100 text-center">
+        <h4>Malfunctions</h4>
+      </div>
+  </div>
+  <div class="row">
+      <div class="col col-100">
+        <ul class="list">
+          <li class="item item-toggle">
+             Breakdown?
+             <label class="toggle toggle-assertive">
+               <input type="checkbox" ng-model="finalCtrl.matchParts.broken">
+               <div class="track">
+                 <div class="handle"></div>
+               </div>
+             </label>
+          </li>
+        </ul>
+      </div>
+  </div>
+  <div class="row">
+   <div class="col col-100">
+    <ul class="list">
+       <li>
+          <div class="item item-button">
+           <div class="text-center">
+             <button class="button button-positive"
+               ng-click="finalCtrl.submit()"
+               ng-disabled="finalCtrl.isFormValid()">
+               Match Results
+             </button>
+            </div>
+          </div>            
+        </li>
+        </ul>
+      </div>
+    </div>
+	</ion-content>
+</ion-view>

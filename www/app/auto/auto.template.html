@@ -1,0 +1,158 @@
+<ion-view view-title="Team Number: {{autoCtrl.match.teamNumber}}">
+	<ion-content class="padding">
+  <div class="row">
+      <div class="col text-center">
+        <h1>Auto</h1>
+      </div>
+    </div>
+        
+        
+         <li class="item item-toggle">
+             Auto-Run
+             <label class="toggle toggle-energized">
+               <input type="checkbox" ng-model="autoCtrl.matchProperties.autoRun">
+               <div class="track">
+                 <div class="handle"></div>
+               </div>
+             </label>
+          </li>
+
+<!--           <li class="item">
+              <div class="row">
+                <div class="col col-100"> -->
+                  <label class="item item-input item-select">
+                    <div class="input-label">Starting Position</div>
+                      <select
+                        ng-model="autoCtrl.matchProperties.placement"
+                       
+                        ng-options="position as position.label for position in autoCtrl.startingPositions track by position.id">
+                      </select>
+                  </label>
+<!--                 </div>
+              </div>
+          </li> -->
+
+    <div class="row">
+      <div class="col col-100">
+        <ul class="list">
+        <li class="item">
+            <div class="row">
+              <div class="col col-100 text-center">
+                <h2>Power Cells to Bottom Port</h2>
+              </div>
+            </div>
+          </li>  
+<!--           <li class="item">
+            <div class="row"> -->
+              <div class="col col-70 text-center">
+                 
+                  <button class="button button-positive"
+                    ng-click="autoCtrl.decreaseSwitch1()">
+                    -1
+                  </button>
+                  <button class="button button-light">
+                    <span ng-bind="autoCtrl.matchProperties.switch"></span>
+                  </button>
+                  <button class="button button-positive"
+                    ng-click="autoCtrl.increaseSwitch1()">
+                    +1
+                  </button>
+            
+              </div>
+<!--             </div>
+          </li> -->
+          <li class="item">
+            <div class="row">
+              <div class="col col-100 text-center">
+                <h2>Power Cells to Outer Port</h2>
+              </div>
+            </div>
+          </li> 
+<!--           <li class="item">
+            <div class="row"> -->
+              <div class="col col-70 text-center">
+               
+                  <button class="button button-positive"
+                    ng-click="autoCtrl.decreaseScale1()">
+                    -1
+                  </button>
+                  <button class="button button-light">
+                    <span ng-bind="autoCtrl.matchProperties.scale"></span>
+                  </button>
+                  <button class="button button-positive"
+                    ng-click="autoCtrl.increaseScale1()">
+                    +1
+                  </button>
+                 
+              </div>
+            <!-- </div> -->
+              
+        <li class="item">     
+            <div class="row">
+              <div class="col col-100 text-center">
+                <h2>Power Cells to Inner Port</h2>
+              </div>
+            </div>
+        </li>
+            <div class="col col-70 text-center">
+               
+                  <button class="button button-positive"
+                    ng-click="autoCtrl.decreaseExchange1()">
+                    -1
+                  </button>
+                  <button class="button button-light">
+                    <span ng-bind="autoCtrl.matchProperties.exchange"></span>
+                  </button>
+                  <button class="button button-positive"
+                    ng-click="autoCtrl.increaseExchange1()">
+                    +1
+                  </button>
+                 
+              </div>
+            
+<!--           </li> -->  
+
+            <li class="item">     
+            <div class="row">
+              <div class="col col-100 text-center">
+                <h2>Power Cells Dropped</h2>
+              </div>
+            </div>
+        </li>
+            <div class="col col-70 text-center">
+               
+                  <button class="button button-positive"
+                    ng-click="autoCtrl.decreaseCubeDropped1()">
+                    -1
+                  </button>
+                  <button class="button button-light">
+                    <span ng-bind="autoCtrl.matchProperties.cubeDropped"></span>
+                  </button>
+                  <button class="button button-positive"
+                    ng-click="autoCtrl.increaseCubeDropped1()">
+                    +1
+                  </button>
+                 
+              </div>
+            
+          </li>                      
+          
+        
+         
+        <li>
+          <div class="row"></div>
+          <div class="item item-button">
+           <div class="text-center">
+             <button class="button button-positive"
+                ng-disabled="!autoCtrl.validStartingPos()"
+                ng-click="autoCtrl.submit()">
+               To Teleop!
+             </button>
+            </div>
+          </div>            
+        </li>
+        </ul>
+      </div>
+    </div>
+</ion-content>
+</ion-view>

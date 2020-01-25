@@ -1,0 +1,250 @@
+<ion-view view-title="Team Number: {{teleOpCtrl.match.teamNumber}}">
+  <ion-content class="padding">
+  <div class="row">
+      <div class="col text-center">
+        <h1>TeleOp</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col-100">
+        <ul class="list">
+          <li class="item">
+            <div class="row">
+              <div class="col col-70 text-center">
+                <h2>Power Cells &#8680; Bottom Port</h2>
+              </div>
+              <div class="col col-70 text-center">
+                <h2>Power Cells &#8680; Outer Port</h2>
+              </div>
+              <div class="col col-70 text-center">
+                <h2>Power Cells &#8680; Inner Port</h2>
+              </div>
+
+            </div>
+          </li>
+        <li class="item">
+            <div class="row">
+              <div class="col col-70 text-center">
+                  <button class="button button-assertive"
+                    ng-click="teleOpCtrl.decreaseSwitchCube1()">
+                    -1
+                  </button>
+                  <button class="button button-light">
+                    <span ng-bind="teleOpCtrl.matchParts.switchCube"></span>
+                  </button>
+                  <button class="button button-positive"
+                    ng-click="teleOpCtrl.increaseSwitchCube1()">
+                    +1
+                  </button>
+              </div>
+              <div class="col col-70 text-center">
+                  <button class="button button-assertive"
+                    ng-click="teleOpCtrl.decreaseScaleCube1()">
+                    -1
+                  </button>
+                  <button class="button button-light">
+                    <span ng-bind="teleOpCtrl.matchParts.scaleCube"></span>
+                  </button>
+                  <button class="button button-positive"
+                    ng-click="teleOpCtrl.increaseScaleCube1()">
+                    +1
+                  </button>
+              </div>
+              <div class="col col-70 text-center">
+                  <button class="button button-assertive"
+                    ng-click="teleOpCtrl.decreaseExchangeCube1()">
+                    -1
+                  </button>
+                  <button class="button button-light">
+                    <span ng-bind="teleOpCtrl.matchParts.exchangeCube"></span>
+                  </button>
+                  <button class="button button-positive"
+                    ng-click="teleOpCtrl.increaseExchangeCube1()">
+                    +1
+                  </button>
+              </div>
+            </div>
+          </li>
+            
+            <li class="item">
+            <div class="row">
+              <div class="col col-100 text-center">
+                <h2>Cubes &#8680; Vault</h2>
+              </div>
+              <div class="col col-100 text-center">
+                <h2>Cubes Dropped</h2>
+              </div>
+              <div class="col col-100 text-center">
+                <h2>Exchange &#8680; Cube</h2>
+              </div>
+            </div>
+          </li>          
+          <li class="item">
+            <div class="row">
+              <div class="col col-70 text-center">
+                  <button class="button button-assertive"
+                    ng-click="teleOpCtrl.decreaseVaultCube1()">
+                    -1
+                  </button>
+                  <button class="button button-light">
+                    <span ng-bind="teleOpCtrl.matchParts.vaultCube"></span>
+                  </button>
+                  <button class="button button-positive"
+                    ng-click="teleOpCtrl.increaseVaultCube1()">
+                    1
+                  </button>
+              </div>
+              <div class="col col-70 text-center">
+                  <button class="button button-assertive"
+                    ng-click="teleOpCtrl.decreaseCubeDropped1()">
+                    -1
+                  </button>
+                  <button class="button button-light">
+                    <span ng-bind="teleOpCtrl.matchParts.cubeDropped"></span>
+                  </button>
+                  <button class="button button-positive"
+                    ng-click="teleOpCtrl.increaseCubeDropped1()">
+                    1
+                  </button>
+              </div>
+               <div class="col col-70 text-center">
+                  <button class="button button-assertive"
+                    ng-click="teleOpCtrl.decreaseOutExchange1()">
+                    -1
+                  </button>
+                  <button class="button button-light">
+                    <span ng-bind="teleOpCtrl.matchParts.outExchange"></span>
+                  </button>
+                  <button class="button button-positive"
+                    ng-click="teleOpCtrl.increaseOutExchange1()">
+                    1
+                  </button>
+              </div>
+            </div>
+          </li>
+        <li class="item">
+            <div class="row">
+              <div class="col col-100 text-center">
+                <h2>Portal &#8680; Cube</h2>
+              </div>
+            </div>
+          </li>          
+          <li class="item">
+            <div class="row">
+              <div class="col col-70 text-center">
+                  <button class="button button-assertive"
+                    ng-click="teleOpCtrl.decreaseOutPortal1()">
+                    -1
+                  </button>
+                  <button class="button button-light">
+                    <span ng-bind="teleOpCtrl.matchParts.outPortal"></span>
+                  </button>
+                  <button class="button button-positive"
+                    ng-click="teleOpCtrl.increaseOutPortal1()">
+                    1
+                  </button>
+              </div>
+            </div>
+          </li>  
+
+          <li class="item item-toggle">
+             Climb Attempt
+             <label class="toggle toggle-energized">
+               <input type="checkbox" ng-model="teleOpCtrl.matchParts.climbAttempt">
+               <div class="track">
+                 <div class="handle"></div>
+               </div>
+             </label>
+          </li> 
+
+            <li class="item item-toggle">
+               Climb Success
+               <label class="toggle toggle-positive">
+                 <input type="checkbox" ng-model="teleOpCtrl.matchParts.climbSuccess" ng-disabled="!teleOpCtrl.matchParts.climbAttempt" ng-change="teleOpCtrl.didClimb()">
+                 <div class="track">
+                   <div class="handle"></div>
+                 </div>
+               </label>
+            </li>
+
+            <li class="item item-toggle">
+             Levitate
+             <label class="toggle toggle-energized">
+               <input type="checkbox" ng-model="teleOpCtrl.matchParts.levitate">
+               <div class="track">
+                 <div class="handle"></div>
+               </div>
+             </label>
+          </li> 
+             
+            <li class="item item-toggle">
+             Parking
+             <label class="toggle toggle-energized">
+               <input type="checkbox" ng-model="teleOpCtrl.matchParts.parking">
+               <div class="track">
+                 <div class="handle"></div>
+               </div>
+             </label>
+          </li>
+        <li class="item item-toggle">
+             Ground
+             <label class="toggle toggle-energized">
+               <input type="checkbox" ng-model="teleOpCtrl.matchParts.ground">
+               <div class="track">
+                 <div class="handle"></div>
+               </div>
+             </label>
+          </li>
+            
+            <li class="item item-toggle">
+             Breakdown
+             <label class="toggle toggle-energized">
+               <input type="checkbox" ng-model="teleOpCtrl.matchParts.breakdown">
+               <div class="track">
+                 <div class="handle"></div>
+               </div>
+             </label>
+          </li>
+              <li class="item">
+                <div class="row">
+                  <div class="col col-100">
+                    <label class="item item-input item-select">
+                      <div class="input-label">Play Style</div>
+                        <select
+                          ng-model="teleOpCtrl.matchParts.playStyle"
+                          ng-options="playStyle as playStyle.label for playStyle in teleOpCtrl.playStyles track by playStyle.id">
+                        </select>
+                    </label>
+                  </div>
+                </div>
+              </li>   
+            <li class="item">
+                <div class="row">
+                  <div class="col col-100">
+                    <label class="item item-input item-select">
+                      <div class="input-label">Fouls</div>
+                        <select
+                          ng-model="teleOpCtrl.matchParts.foul"
+                          ng-options="foul as foul.label for foul in teleOpCtrl.fouls track by foul.id">
+                        </select>
+                    </label>
+                  </div>
+                </div>
+              </li> 
+            
+             <li>
+            <div class="item item-button">
+				  <div class="text-center">
+					<button class="button button-positive"
+                    ng-click="teleOpCtrl.submit()">
+					To Results!
+				</button>
+				</div>
+			</div>
+            
+        </li>
+        </ul>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
