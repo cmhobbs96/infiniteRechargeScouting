@@ -6,9 +6,16 @@
       </div>
     </div>
         
-        
+        <label class="item item-input item-select">
+            <div class="input-label">Starting Position</div>
+                <select
+                    ng-model="autoCtrl.matchProperties.placement"
+                       
+                        ng-options="position as position.label for position in autoCtrl.startingPositions track by position.id">
+                 </select>
+        </label>
          <li class="item item-toggle">
-             Auto-Run
+             Cross Starting Line
              <label class="toggle toggle-energized">
                <input type="checkbox" ng-model="autoCtrl.matchProperties.autoRun">
                <div class="track">
@@ -17,28 +24,13 @@
              </label>
           </li>
 
-<!--           <li class="item">
-              <div class="row">
-                <div class="col col-100"> -->
-                  <label class="item item-input item-select">
-                    <div class="input-label">Starting Position</div>
-                      <select
-                        ng-model="autoCtrl.matchProperties.placement"
-                       
-                        ng-options="position as position.label for position in autoCtrl.startingPositions track by position.id">
-                      </select>
-                  </label>
-<!--                 </div>
-              </div>
-          </li> -->
-
     <div class="row">
       <div class="col col-100">
         <ul class="list">
         <li class="item">
             <div class="row">
               <div class="col col-100 text-center">
-                <h2>Power Cells to Bottom Port</h2>
+                <h2>Power Cells &#8680; Bottom Port</h2>
               </div>
             </div>
           </li>  
@@ -47,14 +39,14 @@
               <div class="col col-70 text-center">
                  
                   <button class="button button-positive"
-                    ng-click="autoCtrl.decreaseSwitch1()">
+                    ng-click="autoCtrl.decreaseBottomPort1()">
                     -1
                   </button>
                   <button class="button button-light">
-                    <span ng-bind="autoCtrl.matchProperties.switch"></span>
+                    <span ng-bind="autoCtrl.matchProperties.bottomPort"></span>
                   </button>
                   <button class="button button-positive"
-                    ng-click="autoCtrl.increaseSwitch1()">
+                    ng-click="autoCtrl.increaseBottomPort1()">
                     +1
                   </button>
             
@@ -64,7 +56,7 @@
           <li class="item">
             <div class="row">
               <div class="col col-100 text-center">
-                <h2>Power Cells to Outer Port</h2>
+                <h2>Power Cells &#8680; Outer Port</h2>
               </div>
             </div>
           </li> 
@@ -73,14 +65,14 @@
               <div class="col col-70 text-center">
                
                   <button class="button button-positive"
-                    ng-click="autoCtrl.decreaseScale1()">
+                    ng-click="autoCtrl.decreaseOuterPort1()">
                     -1
                   </button>
                   <button class="button button-light">
-                    <span ng-bind="autoCtrl.matchProperties.scale"></span>
+                    <span ng-bind="autoCtrl.matchProperties.outerPort"></span>
                   </button>
                   <button class="button button-positive"
-                    ng-click="autoCtrl.increaseScale1()">
+                    ng-click="autoCtrl.increaseOuterPort1()">
                     +1
                   </button>
                  
@@ -90,21 +82,21 @@
         <li class="item">     
             <div class="row">
               <div class="col col-100 text-center">
-                <h2>Power Cells to Inner Port</h2>
+                <h2>Power Cells &#8680; Inner Port</h2>
               </div>
             </div>
         </li>
             <div class="col col-70 text-center">
                
                   <button class="button button-positive"
-                    ng-click="autoCtrl.decreaseExchange1()">
+                    ng-click="autoCtrl.decreaseInnerPort1()">
                     -1
                   </button>
                   <button class="button button-light">
-                    <span ng-bind="autoCtrl.matchProperties.exchange"></span>
+                    <span ng-bind="autoCtrl.matchProperties.innerPort"></span>
                   </button>
                   <button class="button button-positive"
-                    ng-click="autoCtrl.increaseExchange1()">
+                    ng-click="autoCtrl.increaseInnerPort1()">
                     +1
                   </button>
                  
@@ -122,14 +114,14 @@
             <div class="col col-70 text-center">
                
                   <button class="button button-positive"
-                    ng-click="autoCtrl.decreaseCubeDropped1()">
+                    ng-click="autoCtrl.decreasePowerCellsDropped1()">
                     -1
                   </button>
                   <button class="button button-light">
-                    <span ng-bind="autoCtrl.matchProperties.cubeDropped"></span>
+                    <span ng-bind="autoCtrl.matchProperties.powerCellsDropped"></span>
                   </button>
                   <button class="button button-positive"
-                    ng-click="autoCtrl.increaseCubeDropped1()">
+                    ng-click="autoCtrl.increasePowerCellsDropped1()">
                     +1
                   </button>
                  
